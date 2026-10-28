@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#7a4fd6">
+<title>Our Little World · Berdua</title>
+<link rel="manifest" href="manifest.json">
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<section id="menu" class="scr">
+  <div class="menu-wrap">
+    <p class="welcome">Welcome to</p>
+    <h1 class="title"><span>OUR LITTLE</span><span>WORLD</span></h1>
+    <p class="sub">A small world, just for us</p>
+    <div class="panel">
+      <label>Nama kamu
+        <input id="nm" maxlength="10" value="Aku">
+      </label>
+      <div class="chars">
+        <button class="ch on" data-c="0"><span id="av0"></span>Aku</button>
+        <button class="ch" data-c="1"><span id="av1"></span>Dia</button>
+      </div>
+      <button id="bHost" class="pill">♥ Buat Room</button>
+      <div class="or">— atau gabung —</div>
+      <div class="row">
+        <input id="code" maxlength="5" placeholder="KODE">
+        <button id="bJoin" class="pill sm" style="margin-top:4px">Gabung</button>
+      </div>
+      <p id="mstatus" class="st"></p>
+    </div>
+  </div>
+</section>
+
+<section id="wait" class="scr" hidden>
+  <div class="panel wait">
+    <div class="cat"><div id="waitCat"></div></div>
+    <p class="wtitle" id="wTitle"></p>
+    <div id="share">
+      <p class="px white" style="font-size:9px">Kode Room</p>
+      <div class="codebox" id="codeBig"></div>
+      <button id="bCopy" class="pill sm">Salin link undangan</button>
+      <p class="sub" style="font-size:13px;margin:10px 0 0;color:#b9c4ea">Kirim kode atau link ini ke dia. Room ini khusus kalian berdua.</p>
+    </div>
+    <button id="bStart" class="pill" hidden disabled>♥ Mulai Main</button>
+    <p id="wStatus" class="st"></p>
+  </div>
+</section>
+
+<section id="game" class="scr" hidden>
+  <div id="stage">
+    <canvas id="cv" width="320" height="192"></canvas>
+    <div class="hud-tl">
+      <div class="hudav" id="avTL"></div>
+      <div class="hpcol">
+        <div class="hp" id="hp1"></div>
+        <div class="prog"><i id="progbar"></i></div>
+      </div>
+    </div>
+    <button class="hud-pause" id="bPause" aria-label="Pause"><i></i><i></i></button>
+    <div class="bubble">
+      <b id="qt">Collect 10 Hearts!</b>
+      <small>Kumpulkan hati untuk membuka hadiah spesial!</small>
+      <div class="cnt"><span class="hi">♥</span><span id="cnt">0 / 10</span></div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div id="count" hidden></div>
+    <div class="ctrl">
+      <div><button data-k="l"><img src="assets/images/ui/arrow-left.png" alt="" onerror="this.replaceWith('◀')"></button><button data-k="r"><img src="assets/images/ui/arrow-right.png" alt="" onerror="this.replaceWith('▶')"></button></div>
+      <div><button data-k="j" class="ajump">A</button></div>
+    </div>
+    <div id="pause" hidden>
+      <div class="pcard">
+        <p class="px">PAUSE</p>
+        <button id="bResume" class="pill">Lanjut</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="win" hidden>
+  <div class="panel">
+    <p class="px" style="font-size:14px;color:#ff5c8a">Quest Selesai!</p>
+    <p class="sub" style="margin:6px 0 0">Kalian sampai di ujung petualangan bareng.</p>
+    <div id="letter"></div>
+    <button id="bAgain" class="pill">Main lagi</button>
+  </div>
+</section>
+
+<script src="js/game.js"></script>
+</body>
+</html>
